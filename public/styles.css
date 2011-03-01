@@ -1,0 +1,20 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+
+a {
+ color: #444;
+}
+
+.time {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.caveat {
+  color: #666;
+  font-size: 0.8em;
+}
