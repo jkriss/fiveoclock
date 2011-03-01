@@ -16,6 +16,7 @@ end
 
 get '/' do
   @time = Time.now.utc
+  @time += params[:offset].to_i if params[:offset]
   
   @fiveoclockhere = settings.zones.find { |tz| tz.timezone.period_for_utc(@time).to_local(@time).hour == 5 + 12 }
   # @fiveoclockhere = TZInfo::Timezone.get(@fiveoclockhere.identifier)

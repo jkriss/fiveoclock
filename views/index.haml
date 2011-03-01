@@ -1,4 +1,5 @@
-- link = "<a href=http://google.com/search?q=#{CGI::escape @fiveoclockhere.description_or_friendly_identifier}>#{@fiveoclockhere.description_or_friendly_identifier}</a>"
+- name = @fiveoclockhere.timezone.friendly_identifier(true)
+- link = "<a href=http://maps.google.com/maps?z=5&t=p&q=#{@fiveoclockhere.latitude.to_f},#{@fiveoclockhere.longitude.to_f}+(#{CGI.escape(name)})>#{name}</a>"
 .time 
   It's five o'clock in #{link}.
   
