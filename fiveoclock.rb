@@ -4,6 +4,7 @@ Bundler.setup
 require 'sinatra'
 require 'haml'
 require 'tzinfo'
+require 'cgi'
 
 before do
   if !settings.respond_to?(:last_check) || Time.now - settings.last_check > 600
