@@ -14,6 +14,10 @@ before do
   end
 end
 
+not_found do
+  redirect '/'
+end
+
 get '/' do
   @time = Time.now.utc
   @time += params[:offset].to_i if params[:offset]
