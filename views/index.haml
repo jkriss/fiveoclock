@@ -1,4 +1,4 @@
-- link = "<a href=http://google.com/search?q=#{@location}>#{@location}</a>"
+- link = "<a href=http://google.com/search?q=#{CGI::escape @fiveoclockhere.description_or_friendly_identifier}>#{@fiveoclockhere.description_or_friendly_identifier}</a>"
 .time 
   It's five o'clock in #{link}.
   
