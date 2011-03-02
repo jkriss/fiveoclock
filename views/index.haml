@@ -1,6 +1,8 @@
-- name = @fiveoclockhere.timezone.friendly_identifier(true)
-- link = "<a href=http://maps.google.com/maps?z=5&t=p&q=#{@fiveoclockhere.latitude.to_f},#{@fiveoclockhere.longitude.to_f}+(#{CGI.escape(name)})>#{name}</a>"
 .time 
-  It's five o'clock in #{link}.
+  It's five o'clock in #{place_link @fiveoclockhere}.
+  
+%ul.others
+  - @other_locations.each_with_index do |location, index|
+    %li and #{place_link location}#{'.' if index == @other_locations.size-1}
   
 .caveat= "Well, #{@afterfive.strftime('%I:%M:%S %p').gsub(/^0/,'').downcase}, anyway."
