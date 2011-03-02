@@ -23,14 +23,22 @@ a {
   font-size: 0.7em;
 }
 
-.others, .others a {
-  color: #666;
-
+.others {
+  color: #888;
 }
 
 .others li {
   display: inline;
   list-style: none;
+}
+
+.others a {
+  text-decoration: none;
+  color: #333;
+}
+
+.others a:hover {
+  text-decoration: underline;
 }
 
 .caveat {

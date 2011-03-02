@@ -3,6 +3,6 @@
   
 %ul.others
   - @other_locations.each_with_index do |location, index|
-    %li and #{place_link location}#{'.' if index == @other_locations.size-1}
+    %li #{'...' if index == 0}and #{place_link location}#{'.' if index == @other_locations.size-1}
   
 .caveat= "Well, #{@afterfive.strftime('%I:%M:%S %p').gsub(/^0/,'').downcase}, anyway."
