@@ -30,7 +30,7 @@ get '/' do
   @time += params[:offset].to_i if params[:offset]
   
   @other_locations = settings.zones.find_all { |tz| tz.timezone.period_for_utc(@time).to_local(@time).hour == 5 + 12 }
-  @fiveoclockhere = @other_locations.delete_at(0)
+  @fiveoclockhere = @other_locations.delete_at(rand(@other_locations.size).to_i)
   # @fiveoclockhere = TZInfo::Timezone.get(@fiveoclockhere.identifier)
   @location = @fiveoclockhere.identifier.split('/').last.gsub("_"," ")
   @afterfive = @fiveoclockhere.timezone.period_for_utc(@time).to_local(@time)
